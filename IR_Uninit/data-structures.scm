@@ -41,7 +41,7 @@
   (define expval->proc
     (lambda (v)
       (cases expval v
-        (uninit-val () (expval->bool (num-val 900)))
+        (uninit-val () (expval->proc (num-val 900)))
 	(proc-val (proc) proc)
 	(else (expval-extractor-error 'proc v)))))
 
